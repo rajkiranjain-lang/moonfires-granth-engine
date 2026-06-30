@@ -1,0 +1,31 @@
+{
+  "name": "moonfires/granth-engine",
+  "description": "Premium digital library platform for Sanatan Dharma scriptures",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Moonfires Tech",
+      "email": "info@moonfirestech.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "composer/installers": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "wp-coding-standards/wpcs": "^3.0",
+    "phpstan/phpstan": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Moonfires\\Granth\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "phpcs": "phpcs --standard=WordPress,WordPress-VIP ./src",
+    "phpcs-fix": "phpcbf --standard=WordPress,WordPress-VIP ./src"
+  }
+}

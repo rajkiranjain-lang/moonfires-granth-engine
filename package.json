@@ -1,0 +1,29 @@
+{
+  "name": "moonfires-granth-engine",
+  "version": "1.0.0",
+  "description": "Premium digital library platform for Sanatan Dharma scriptures",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "lint": "eslint assets/js",
+    "lint:css": "stylelint assets/css"
+  },
+  "keywords": [
+    "wordpress",
+    "scripture",
+    "granth",
+    "hindu",
+    "library"
+  ],
+  "author": "Moonfires Tech",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0",
+    "eslint": "^8.0.0",
+    "stylelint": "^15.0.0"
+  }
+}
