@@ -1,0 +1,43 @@
+/**
+ * Responsive Design - Mobile First
+ */
+
+@media (min-width: 768px) {
+  .mge-header-container {
+    flex-wrap: nowrap;
+  }
+
+  .mge-search-container {
+    display: block !important;
+  }
+
+  .mge-nav {
+    display: flex !important;
+  }
+
+  .mge-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-display: 1.75rem;
+    --font-size-h1: 1.5rem;
+  }
+
+  .mge-hero {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .mge-grid-cols-3, .mge-grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mge-container {
+    max-width: 1200px;
+    padding: var(--space-2xl) var(--space-3xl);
+  }
+}
