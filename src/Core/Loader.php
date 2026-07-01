@@ -1,24 +1,15 @@
 <?php
+/**
+ * Hook Loader
+ * Manages all WordPress hooks
+ */
 
 namespace Moonfires\Granth\Core;
 
-/**
- * Loader Class - Manages hooks and filters
- * 
- * @package Moonfires\Granth\Core
- */
 class Loader {
-    
-    /**
-     * Registered actions
-     */
     private $actions = [];
-    
-    /**
-     * Registered filters
-     */
     private $filters = [];
-    
+
     /**
      * Add action
      */
@@ -30,7 +21,7 @@ class Loader {
             'accepted_args' => $accepted_args,
         ];
     }
-    
+
     /**
      * Add filter
      */
@@ -42,17 +33,13 @@ class Loader {
             'accepted_args' => $accepted_args,
         ];
     }
-    
+
     /**
      * Run all registered hooks
      */
     public function run() {
-        // Register filters
+        // Run filters
         foreach ($this->filters as $hook => $callbacks) {
-            usort($callbacks, function($a, $b) {
-                return $a['priority'] - $b['priority'];
-            });
-            
             foreach ($callbacks as $callback) {
                 add_filter(
                     $hook,
@@ -62,13 +49,9 @@ class Loader {
                 );
             }
         }
-        
-        // Register actions
+
+        // Run actions
         foreach ($this->actions as $hook => $callbacks) {
-            usort($callbacks, function($a, $b) {
-                return $a['priority'] - $b['priority'];
-            });
-            
             foreach ($callbacks as $callback) {
                 add_action(
                     $hook,
